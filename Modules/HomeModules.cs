@@ -13,6 +13,7 @@ namespace JobHistory
       };
       Get["/jobs"] = _ => {
         List<Job> allJobs = Job.GetAll();
+        // allJobs = allJobs.Sort();
         return View["view_jobs.cshtml", allJobs];
       };
       Get["/jobs/new"] = _ => {
@@ -21,10 +22,16 @@ namespace JobHistory
       Post["/jobs"] = _ => {
         Job newJob = new Job(Request.Form["new-employer"], Request.Form["new-title"], Request.Form["new-start-date"], Request.Form["new-end-date"]);
         List<Job> allJobs = Job.GetAll();
+        foreach(Job job in allJobs)
+        {
+          System.Console.WriteLine(job.GetStartDate());
+        }
+        System.Console.WriteLine(allJobs);
         return View["view_jobs.cshtml", allJobs];
       };
       Get["/job/details/{id}"] = parameters => {
         Job job = Job.Find(parameters.id);
+        System.Console.WriteLine(job.GetStartDate().GetType());
         return View["/view_details.cshtml", job];
       };
       Get["/job/details/edit/{id}"] = parameters => {
