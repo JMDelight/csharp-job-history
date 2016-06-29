@@ -1,0 +1,12 @@
+<h1>Job History</h1>
+
+
+  @foreach(var job in @Model)
+  {
+    <p>@job.GetEmployer()</p>
+    <p>@job.GetTitle()</p>
+    <p>@job.GetStartDate()</p>
+    <p>@job.GetEndDate()</p>
+  }
+
+<a href="/jobs/new">Add New Job</a>
