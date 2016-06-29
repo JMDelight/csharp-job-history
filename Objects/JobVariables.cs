@@ -41,6 +41,10 @@ namespace JobHistory.Objects
     {
       return _instances;
     }
+    public int GetId()
+    {
+      return _id;
+    }
     // Searches for specific Job object and returns it
     public static Job Find(int searchId)
     {

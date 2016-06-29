@@ -3,10 +3,8 @@
 
   @foreach(var job in @Model)
   {
-    <p>@job.GetEmployer()</p>
+    <p><a href="/job/details/@job.GetId()">@job.GetEmployer()</a></p>
     <p>@job.GetTitle()</p>
-    <p>@job.GetStartDate()</p>
-    <p>@job.GetEndDate()</p>
   }
 
 <a href="/jobs/new">Add New Job</a>

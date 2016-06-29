@@ -27,6 +27,18 @@ namespace JobHistory
         Job job = Job.Find(parameters.id);
         return View["/view_details.cshtml", job];
       };
+      Get["/job/details/edit/{id}"] = parameters => {
+        Job job = Job.Find(parameters.id);
+        return View["/edit_job.cshtml", job];
+      };
+      Post["/job/details/{id}"] = parameters => {
+        Job job = Job.Find(parameters.id);
+        job.SetEmployer(Request.Form["new-employer"]);
+        job.SetTitle(Request.Form["new-title"]);
+        job.SetStartDate(Request.Form["new-start-date"]);
+        job.SetEndDate(Request.Form["new-end-date"]);
+        return View["/view_details.cshtml", job];
+      };
     }
   }
 }

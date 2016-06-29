@@ -1,0 +1,10 @@
+<h2>Employer</h2>
+<p>@Model.GetEmployer()</p>
+<h3>Title</h3>
+<p>@Model.GetTitle()</p>
+<h3>Dates Worked</h3>
+<p>@Model.GetStartDate() - @Model.GetEndDate()</p>
+
+<a href="/jobs/new">Add Another Job</a>
+<a href="/jobs">View All Jobs</a>
+<a href="/job/details/edit/@Model.GetId()">Edit</a>
