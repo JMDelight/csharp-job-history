@@ -57,13 +57,13 @@ namespace JobHistory.Objects
     {
       return _instances[searchId -1];
     }
-    public static void Sort()
-    {
-      System.Console.WriteLine("Hello there");
+    // public static void Sort()
+    // {
+    //   System.Console.WriteLine("Hello there");
       //
       // List<Job> sortedList = _instances.Sort(_instances);
       // _instances = sortedList;
-    }
+    // }
     // Setters for Job object
     public void SetEmployer(string newEmployer)
     {
@@ -76,7 +76,7 @@ namespace JobHistory.Objects
     public void SetStartDate(string newStart)
     {
       _startDate = newStart;
-      Job.Sort();
+      // Job.Sort();
       // StartDateSort = int.Parse(newStart.Replace("/", ""));
     }
     public void SetEndDate(string newEnd)

@@ -22,6 +22,7 @@ namespace JobHistory
       Post["/jobs"] = _ => {
         Job newJob = new Job(Request.Form["new-employer"], Request.Form["new-title"], Request.Form["new-start-date"], Request.Form["new-end-date"]);
         List<Job> allJobs = Job.GetAll();
+        allJobs.Sort((j1, j2) => j1.GetStartDate().CompareTo(j2.GetStartDate()));
         foreach(Job job in allJobs)
         {
           System.Console.WriteLine(job.GetStartDate());
